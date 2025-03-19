@@ -1,0 +1,29 @@
+"""
+Contans info about Pagination for better control in responses
+"""
+type Pagination {
+  """
+  Indicates limit that query has made it
+  """
+  limit: Int
+  """
+  Is the current page of showed results
+  """
+  currentPage: Int
+  """
+  Indicates to user which is the first page of results (0 by default)
+  """
+  firstPage: Int
+  """
+  Indicates to uer which is the last page of results
+  """
+  lastPage: Int
+  """
+  Indicates the total results got by the query
+  """
+  totalResults: Int
+  """
+  Tells to user if there is another page of results
+  """
+  hasNextPage: Boolean
+}

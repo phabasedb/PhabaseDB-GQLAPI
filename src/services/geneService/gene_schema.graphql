@@ -1,0 +1,127 @@
+"""
+Gene data schema
+"""
+type Gene {
+  _id: String
+  gene: GeneInfo
+  organism: OrgaInfo
+  chromosome: Chromosome
+  transcripts: [Transcript]
+}
+
+"""
+Gene information
+"""
+type GeneInfo {
+  _id: String
+  accessionId: String
+  name: String
+  startPosition: Int
+  endPosition: Int
+  strand: String
+  sequence: String
+  description: String
+}
+
+"""
+Organism information
+"""
+type OrgaInfo {
+  _id: String
+  name: String
+  description: String
+}
+
+"""
+Chromosome details
+"""
+type Chromosome {
+  _id: String
+  name: String
+  type: String
+  description: String
+}
+
+"""
+Transcript information
+"""
+type Transcript {
+  _id: String
+  accessionId: String
+  startPosition: Int
+  endPosition: Int
+  strand: String
+  sequence: String
+  utrs: [UTR]
+  exons: [Exon]
+  cds: [CD]
+  product: Product
+}
+
+"""
+UTR details
+"""
+type UTR {
+  accessionId: String
+  name: String
+  startPosition: Int
+  endPosition: Int
+  strand: String
+  type: String
+  sequence: String
+}
+
+"""
+Exon details
+"""
+type Exon {
+  accessionId: String
+  name: String
+  startPosition: Int
+  endPosition: Int
+  strand: String
+  type: String
+  sequence: String
+}
+
+"""
+CD details
+"""
+type CD {
+  accessionId: String
+  name: String
+  startPosition: Int
+  endPosition: Int
+  strand: String
+  type: String
+  phase: Int
+  sequence: String
+}
+
+"""
+Product details
+"""
+type Product {
+  _id: String
+  name: String
+  cdsIds: [String]
+  sequence: String
+  aminoacidSequence: String
+}
+
+type Query {
+  getAllGenes(limit: Int, page: Int = 0): GeneResult!
+  getGeneBy(
+    search: String
+    advancedSearch: String
+    limit: Int
+    page: Int = 0
+    properties: [String]
+    fullMatchOnly: Boolean = false
+  ): GeneResult!
+}
+
+type GeneResult {
+  data: [Gene]
+  pagination: Pagination
+}
