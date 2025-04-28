@@ -1,4 +1,4 @@
-import { Gene } from "./Gene_model";
+import { Gene } from "./gene_model";
 import { commonController } from "../common/controller_common_functions";
 import {
   advancedSearchFilter,
