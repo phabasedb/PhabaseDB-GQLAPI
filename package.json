@@ -17,7 +17,7 @@
     "@babel/eslint-parser": "^7.24.1",
     "@graphql-tools/load-files": "^6.5.2",
     "@graphql-tools/merge": "^8.2.1",
-    "apollo-fetch": "^0.7.0",
+    "apollo-fetch": "^0.6.0",
     "apollo-server-express": "^3.6.2",
     "babel-preset-env": "^0.0.0",
     "babel-preset-stage-0": "^6.24.1",

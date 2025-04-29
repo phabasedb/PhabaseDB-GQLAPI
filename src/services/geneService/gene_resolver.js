@@ -1,5 +1,5 @@
-import { Gene } from "./Gene_model";
-import { geneController } from "./Gene_controller";
+import { Gene } from "./gene_model";
+import { geneController } from "./gene_controller";
 import { commonController } from "../common/controller_common_functions";
 
 export const geneResolvers = {

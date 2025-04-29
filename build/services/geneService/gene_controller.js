@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.geneController = void 0;
-var _Gene_model = require("./Gene_model");
+var _gene_model = require("./gene_model");
 var _controller_common_functions = require("../common/controller_common_functions");
 var _mongodbFilterObjectParser = require("mongodb-filter-object-parser");
 var _graphql = require("graphql");
@@ -51,11 +51,11 @@ var geneController = exports.geneController = /*#__PURE__*/function () {
                 filter = (0, _mongodbFilterObjectParser.textSearchFilter)(search, properties, fullMatchOnly);
               }
               _context.next = 9;
-              return _Gene_model.Gene.find(filter).limit(limit).skip(offset);
+              return _gene_model.Gene.find(filter).limit(limit).skip(offset);
             case 9:
               genes = _context.sent;
               _context.next = 12;
-              return _controller_common_functions.commonController.countDocumentsIn(_Gene_model.Gene, filter);
+              return _controller_common_functions.commonController.countDocumentsIn(_gene_model.Gene, filter);
             case 12:
               total = _context.sent;
               lastPage = Math.floor(total / limit);
