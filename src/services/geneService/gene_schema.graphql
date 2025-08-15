@@ -20,6 +20,7 @@ type GeneInfo {
   endPosition: Int
   strand: String
   sequence: String
+  length: Int
   description: String
 }
 
@@ -52,6 +53,7 @@ type Transcript {
   endPosition: Int
   strand: String
   sequence: String
+  length: Int
   utrs: [UTR]
   exons: [Exon]
   cds: [CD]
@@ -69,6 +71,7 @@ type UTR {
   strand: String
   type: String
   sequence: String
+  length: Int
 }
 
 """
@@ -82,6 +85,7 @@ type Exon {
   strand: String
   type: String
   sequence: String
+  length: Int
 }
 
 """
@@ -96,6 +100,7 @@ type CD {
   type: String
   phase: Int
   sequence: String
+  length: Int
 }
 
 """
@@ -106,6 +111,7 @@ type Product {
   name: String
   cdsIds: [String]
   sequence: String
+  length: Int
   aminoacidSequence: String
 }
 

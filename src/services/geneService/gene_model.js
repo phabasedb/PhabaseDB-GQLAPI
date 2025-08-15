@@ -8,6 +8,7 @@ const geneInfoSchema = new mongoose.Schema({
   endPosition: Number,
   strand: String,
   sequence: { type: String, match: /^[ATCGatcgnN]*$/ },
+  length: Number,
   description: String,
 });
 
@@ -32,6 +33,7 @@ const utrSchema = new mongoose.Schema({
   strand: String,
   type: String,
   sequence: { type: String, match: /^[ATCGatcgnN]*$/ },
+  length: Number,
 });
 
 const exonSchema = new mongoose.Schema({
@@ -42,6 +44,7 @@ const exonSchema = new mongoose.Schema({
   strand: String,
   type: String,
   sequence: { type: String, match: /^[ATCGatcgnN]*$/ },
+  length: Number,
 });
 
 const cdSchema = new mongoose.Schema({
@@ -53,6 +56,7 @@ const cdSchema = new mongoose.Schema({
   type: String,
   phase: Number,
   sequence: { type: String, match: /^[ATCGatcgnN]*$/ },
+  length: Number,
 });
 
 const productSchema = new mongoose.Schema({
@@ -60,6 +64,7 @@ const productSchema = new mongoose.Schema({
   name: String,
   cdsIds: [String],
   sequence: { type: String, match: /^[ATCGatcgnN]*$/ },
+  length: Number,
   aminoacidSequence: String,
 });
 
@@ -70,6 +75,7 @@ const transcriptSchema = new mongoose.Schema({
   endPosition: Number,
   strand: String,
   sequence: { type: String, match: /^[ATCGatcgnN]*$/ },
+  length: Number,
   utrs: [utrSchema],
   exons: [exonSchema],
   cds: [cdSchema],

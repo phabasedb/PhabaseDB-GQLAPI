@@ -17,6 +17,7 @@ var geneInfoSchema = new _mongoose["default"].Schema({
     type: String,
     match: /^[ATCGatcgnN]*$/
   },
+  length: Number,
   description: String
 });
 var orgaInfoSchema = new _mongoose["default"].Schema({
@@ -40,7 +41,8 @@ var utrSchema = new _mongoose["default"].Schema({
   sequence: {
     type: String,
     match: /^[ATCGatcgnN]*$/
-  }
+  },
+  length: Number
 });
 var exonSchema = new _mongoose["default"].Schema({
   accessionId: String,
@@ -52,7 +54,8 @@ var exonSchema = new _mongoose["default"].Schema({
   sequence: {
     type: String,
     match: /^[ATCGatcgnN]*$/
-  }
+  },
+  length: Number
 });
 var cdSchema = new _mongoose["default"].Schema({
   accessionId: String,
@@ -65,7 +68,8 @@ var cdSchema = new _mongoose["default"].Schema({
   sequence: {
     type: String,
     match: /^[ATCGatcgnN]*$/
-  }
+  },
+  length: Number
 });
 var productSchema = new _mongoose["default"].Schema({
   _id: String,
@@ -75,6 +79,7 @@ var productSchema = new _mongoose["default"].Schema({
     type: String,
     match: /^[ATCGatcgnN]*$/
   },
+  length: Number,
   aminoacidSequence: String
 });
 var transcriptSchema = new _mongoose["default"].Schema({
@@ -87,6 +92,7 @@ var transcriptSchema = new _mongoose["default"].Schema({
     type: String,
     match: /^[ATCGatcgnN]*$/
   },
+  length: Number,
   utrs: [utrSchema],
   exons: [exonSchema],
   cds: [cdSchema],
